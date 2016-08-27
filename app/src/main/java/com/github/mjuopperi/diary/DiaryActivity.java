@@ -1,8 +1,10 @@
 package com.github.mjuopperi.diary;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -35,5 +37,10 @@ public class DiaryActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
 
         listView.setAdapter(adapter);
+    }
+
+    public void addEntry(View view) {
+        Intent intent = new Intent(this, AddEntryActivity.class);
+        startActivity(intent);
     }
 }

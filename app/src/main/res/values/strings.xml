@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Diary</string>
     <string name="empty">Nothing to show</string>
+    <string name="label_date">Date</string>
+    <string name="label_title">Title</string>
+    <string name="label_description">Notes</string>
+    <string name="label_add_entry">Add Entry</string>
+    <string name="button_set_date">Set Date</string>
+    <string name="button_save_entry">Save Entry</string>
 </resources>
