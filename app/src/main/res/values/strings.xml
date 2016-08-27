@@ -5,6 +5,9 @@
     <string name="label_title">Title</string>
     <string name="label_description">Notes</string>
     <string name="label_add_entry">Add Entry</string>
+    <string name="label_modify_entry">Edit Entry</string>
     <string name="button_set_date">Set Date</string>
     <string name="button_save_entry">Save Entry</string>
+    <string name="button_update_entry">Update</string>
+    <string name="button_delete_entry">Delete</string>
 </resources>

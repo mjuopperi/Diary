@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/date_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_date"
+            android:textSize="32sp"
+            />
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:id="@+id/set_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_set_date"
+        android:layout_alignBottom="@+id/date_layout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="setDate"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_layout">
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_title"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <EditText
+        android:id="@+id/description"
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:gravity="top|left"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/title_layout" />
+
+    <Button
+        android:id="@+id/delete_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_delete_entry"
+        android:layout_below="@+id/description"
+        android:layout_alignParentLeft="true"
+        android:backgroundTint="@color/colorWarn"
+        android:onClick="deleteEntry"/>
+
+    <Button
+        android:id="@+id/update_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_update_entry"
+        android:layout_below="@+id/description"
+        android:layout_alignParentRight="true"
+        android:onClick="updateEntry"/>
+
+</RelativeLayout>

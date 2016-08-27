@@ -15,7 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddEntryActivity" android:label="@string/label_add_entry"></activity>
+        <activity
+            android:name=".AddEntryActivity"
+            android:label="@string/label_add_entry" />
+        <activity
+            android:name=".ModifyEntryActivity"
+            android:label="@string/label_modify_entry" />
     </application>
 
 </manifest>

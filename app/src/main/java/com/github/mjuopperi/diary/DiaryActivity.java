@@ -5,10 +5,10 @@ import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-
-import java.util.Date;
+import android.widget.TextView;
 
 public class DiaryActivity extends AppCompatActivity {
 
@@ -37,6 +37,29 @@ public class DiaryActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
+                TextView idTextView = (TextView) view.findViewById(R.id.id);
+                TextView dateTextView = (TextView) view.findViewById(R.id.date);
+                TextView titleTextView = (TextView) view.findViewById(R.id.title);
+                TextView descriptionTextView = (TextView) view.findViewById(R.id.description);
+
+                int id = Integer.parseInt(idTextView.getText().toString());
+                String date = dateTextView.getText().toString();
+                String title = titleTextView.getText().toString();
+                String description = descriptionTextView.getText().toString();
+
+                Intent modifyIntent = new Intent(getApplicationContext(), ModifyEntryActivity.class);
+                modifyIntent.putExtra("id", id);
+                modifyIntent.putExtra("date", date);
+                modifyIntent.putExtra("title", title);
+                modifyIntent.putExtra("description", description);
+
+                startActivity(modifyIntent);
+            }
+        });
     }
 
     public void addEntry(View view) {
