@@ -32,14 +32,9 @@ public class DBManager {
         dbHelper.close();
     }
 
-    private String formatDate(Date date) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        return dateFormat.format(date);
-    }
-
     public void insert(Date date, String title, String description) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DBHelper.DATE, formatDate(date));
+        contentValues.put(DBHelper.DATE, Util.formatDate(date));
         contentValues.put(DBHelper.TITLE, title);
         contentValues.put(DBHelper.DESCRIPTION, description);
         db.insert(DBHelper.TABLE_NAME, null, contentValues);
@@ -56,7 +51,7 @@ public class DBManager {
 
     public int update(long id, Date date, String title, String description) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DBHelper.DATE, formatDate(date));
+        contentValues.put(DBHelper.DATE, Util.formatDate(date));
         contentValues.put(DBHelper.TITLE, title);
         contentValues.put(DBHelper.DESCRIPTION, description);
         return db.update(DBHelper.TABLE_NAME, contentValues, DBHelper.ID + " = " + id, null);
