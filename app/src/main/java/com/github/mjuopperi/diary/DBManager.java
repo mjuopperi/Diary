@@ -40,9 +40,9 @@ public class DBManager {
         db.insert(DBHelper.TABLE_NAME, null, contentValues);
     }
 
-    public Cursor fetch() {
+    public Cursor fetch(String orderBy) {
         String[] columns = new String[] { DBHelper.ID, DBHelper.DATE, DBHelper.TITLE, DBHelper.DESCRIPTION, DBHelper.CREATED_AT };
-        Cursor cursor = db.query(DBHelper.TABLE_NAME, columns, null, null, null, null, null);
+        Cursor cursor = db.query(DBHelper.TABLE_NAME, columns, null, null, null, null, orderBy);
         if (cursor != null) {
             cursor.moveToFirst();
         }

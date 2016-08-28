@@ -10,4 +10,8 @@
     <string name="button_save_entry">Save Entry</string>
     <string name="button_update_entry">Update</string>
     <string name="button_delete_entry">Delete</string>
+    <string name="title_sort">Sort</string>
+    <string name="sort_by_date">By date</string>
+    <string name="sort_by_title">By title</string>
+    <string name="sort_by_created_at">By timestamp</string>
 </resources>

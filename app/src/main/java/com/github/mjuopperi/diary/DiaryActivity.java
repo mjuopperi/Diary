@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -28,7 +31,7 @@ public class DiaryActivity extends AppCompatActivity {
 
         dbManager = new DBManager(this);
         dbManager.open();
-        Cursor cursor = dbManager.fetch();
+        Cursor cursor = dbManager.fetch(DBHelper.ID);
 
         listView = (ListView) findViewById(R.id.entry_list);
         listView.setEmptyView(findViewById(R.id.empty));
@@ -62,8 +65,26 @@ public class DiaryActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
     public void addEntry(View view) {
         Intent intent = new Intent(this, AddEntryActivity.class);
         startActivity(intent);
+    }
+
+    public void sortByDate(MenuItem item) {
+        adapter.swapCursor(dbManager.fetch(DBHelper.DATE));
+    }
+
+    public void sortByTitle(MenuItem item) {
+        adapter.swapCursor(dbManager.fetch(DBHelper.TITLE));
+    }
+
+    public void sortByCreatedAt(MenuItem item) {
+        adapter.swapCursor(dbManager.fetch(DBHelper.CREATED_AT));
     }
 }
