@@ -3,26 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
+
     <TextView
         android:id="@+id/id"
-        android:layout_width="25dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="6dp"
-        android:padding="3dp"
-        android:visibility="visible" />
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/id"
         android:maxLines="1"
         android:padding="3dp"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="2016-12-12"/>
 
     <TextView
         android:id="@+id/title"
@@ -37,7 +34,8 @@
         android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/date"
         android:layout_toEndOf="@+id/date"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:text="This is the title"/>
 
     <TextView
         android:id="@+id/description"
@@ -49,17 +47,7 @@
         android:visibility="visible"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/date"
-        android:layout_below="@+id/date" />
-
-    <TextView
-        android:id="@+id/created_at"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="2"
-        android:padding="3dp"
-        android:visibility="visible"
-        android:layout_alignLeft="@+id/description"
-        android:layout_below="@+id/description" />
+        android:layout_below="@+id/date"
+        android:text="This is the content that can be pretty long because it can be perrty long and long and it gfoes on forever why did I onot just copy paster sthi"/>
 
 </RelativeLayout>

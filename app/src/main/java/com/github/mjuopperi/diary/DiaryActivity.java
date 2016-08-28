@@ -20,9 +20,9 @@ public class DiaryActivity extends AppCompatActivity {
     private SimpleCursorAdapter adapter;
 
 
-    final String[] from = new String[] { DBHelper.ID, DBHelper.DATE, DBHelper.TITLE, DBHelper.DESCRIPTION, DBHelper.CREATED_AT };
+    final String[] from = new String[] { DBHelper.ID, DBHelper.DATE, DBHelper.TITLE, DBHelper.DESCRIPTION };
 
-    final int[] to = new int[] { R.id.id, R.id.date, R.id.title, R.id.description, R.id.created_at };
+    final int[] to = new int[] { R.id.id, R.id.date, R.id.title, R.id.description };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
